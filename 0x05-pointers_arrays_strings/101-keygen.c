@@ -17,15 +17,15 @@ int main(void)
 		password[index] = 33 + rand() % 94;
 		sum += password[index++];
 	}
-	passwor[index] '\0';
+	password[index] = '\0';
 	if (sum != 2772)
 	{
 		diff_half1 = (sum - 2772) / 2;
 		diff_half2 = (sum - 2772) / 2;
 
 		if ((sum - 2772) % 2 != 0)
-		diff_haf1++;
-		for (index = 0; passwoed[index]; index++)
+		diff_half1++;
+		for (index = 0; passwod[index]; index++)
 		{
 			if (password[index] >= (33 + diff_half1))
 			{
