@@ -1,46 +1,23 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
+ * _memset - Fills the first n bytes of the memory area
+ *          pointed to by @s with the constant byte @c.
+ * @s: A pointer to the memory area to be filled.
+ * @c: The character to fill the memory area with.
+ * @n: The number of bytes to be filled.
+ * description _memset: over there
  *
- * Return: Nothing.
- */
-void simple_print_buffer(char *buffer, unsigned int size)
-{
-        unsigned int i;
-
-        i = 0;
-        while (i < size)
-        {
-                if (i % 10)
-                {
-                        printf(" ");
-                }
-                if (!(i % 10) && i)
-                {
-                        printf("\n");
-                }
-                printf("0x%02x", buffer[i]);
-                i++;
-        }
-        printf("\n");
-}
-
-/**
- * main - check the code for ALX School students.
+ * Return: A pointer to the filled memory area @s.
  *
- * Return: Always 0.
  */
-int main(void)
+void *_memset(void *s, int c, size_t n)
 {
-    char buffer[98] = {0x00};
+	unsigned int index;
+	unsigned char *memory = s, value = c;
 
-    simple_print_buffer(buffer, 98);
-    _memset(buffer, 0x01, 95);
-    printf("-------------------------------------------------\n");
-    simple_print_buffer(buffer, 98);
-    return (0);
+	for (index = 0; index < n; index++)
+		memory[index] = value;
+
+	return (memory);
 }
