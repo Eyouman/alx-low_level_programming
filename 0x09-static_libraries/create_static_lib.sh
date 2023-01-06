@@ -1,1 +1,3 @@
-create_static_lib.sh
+#!/bin/bash
+gcc -c *.c
+ar -rcs liball.a *.o
